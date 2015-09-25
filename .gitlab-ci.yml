@@ -1,0 +1,10 @@
+before_script:
+  - gem install xcpretty;
+
+types:
+  - test
+
+Timber:
+  type: test
+  script:
+    - xcodebuild -verbose -scheme Timber -destination "platform=iOS Simulator,name=iPhone 6 Plus,OS=9.0" test | xcpretty -c
