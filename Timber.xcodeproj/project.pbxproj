@@ -8,15 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		D2B3D1AA1BB5B94A0043B6B5 /* Timber.h in Headers */ = {isa = PBXBuildFile; fileRef = D2B3D1A91BB5B94A0043B6B5 /* Timber.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D2B3D1B11BB5B94A0043B6B5 /* Timber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B3D1A61BB5B94A0043B6B5 /* Timber.framework */; settings = {ASSET_TAGS = (); }; };
+		D2B3D1B11BB5B94A0043B6B5 /* Timber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B3D1A61BB5B94A0043B6B5 /* Timber.framework */; };
 		D2B3D1B61BB5B94A0043B6B5 /* TimberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1B51BB5B94A0043B6B5 /* TimberTests.swift */; };
-		D2B3D1CD1BB5BA260043B6B5 /* ConsoleLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1C61BB5BA260043B6B5 /* ConsoleLogger.swift */; settings = {ASSET_TAGS = (); }; };
-		D2B3D1CE1BB5BA260043B6B5 /* DeviceLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1C71BB5BA260043B6B5 /* DeviceLogger.swift */; settings = {ASSET_TAGS = (); }; };
-		D2B3D1CF1BB5BA260043B6B5 /* FileLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1C81BB5BA260043B6B5 /* FileLogger.swift */; settings = {ASSET_TAGS = (); }; };
-		D2B3D1D01BB5BA260043B6B5 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1C91BB5BA260043B6B5 /* Logger.swift */; settings = {ASSET_TAGS = (); }; };
-		D2B3D1D11BB5BA260043B6B5 /* LogMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1CA1BB5BA260043B6B5 /* LogMessage.swift */; settings = {ASSET_TAGS = (); }; };
-		D2B3D1D21BB5BA260043B6B5 /* MessageFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1CB1BB5BA260043B6B5 /* MessageFormatter.swift */; settings = {ASSET_TAGS = (); }; };
-		D2B3D1D31BB5BA260043B6B5 /* Timber.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1CC1BB5BA260043B6B5 /* Timber.swift */; settings = {ASSET_TAGS = (); }; };
+		D2B3D1CD1BB5BA260043B6B5 /* ConsoleLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1C61BB5BA260043B6B5 /* ConsoleLogger.swift */; };
+		D2B3D1CE1BB5BA260043B6B5 /* DeviceLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1C71BB5BA260043B6B5 /* DeviceLogger.swift */; };
+		D2B3D1CF1BB5BA260043B6B5 /* FileLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1C81BB5BA260043B6B5 /* FileLogger.swift */; };
+		D2B3D1D01BB5BA260043B6B5 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1C91BB5BA260043B6B5 /* Logger.swift */; };
+		D2B3D1D11BB5BA260043B6B5 /* LogMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1CA1BB5BA260043B6B5 /* LogMessage.swift */; };
+		D2B3D1D21BB5BA260043B6B5 /* MessageFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1CB1BB5BA260043B6B5 /* MessageFormatter.swift */; };
+		D2B3D1D31BB5BA260043B6B5 /* Timber.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1CC1BB5BA260043B6B5 /* Timber.swift */; };
+		D2EAE6A21BD27AB7007F4516 /* Timber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EAE6981BD27AB7007F4516 /* Timber.framework */; };
+		D2EAE6AF1BD27B87007F4516 /* TimberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1B51BB5B94A0043B6B5 /* TimberTests.swift */; };
+		D2EAE6B01BD27B8E007F4516 /* Timber.h in Headers */ = {isa = PBXBuildFile; fileRef = D2B3D1A91BB5B94A0043B6B5 /* Timber.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2EAE6B11BD27B95007F4516 /* Timber.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1CC1BB5BA260043B6B5 /* Timber.swift */; };
+		D2EAE6B21BD27B98007F4516 /* ConsoleLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1C61BB5BA260043B6B5 /* ConsoleLogger.swift */; };
+		D2EAE6B31BD27BA0007F4516 /* FileLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1C81BB5BA260043B6B5 /* FileLogger.swift */; };
+		D2EAE6B41BD27BA7007F4516 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1C91BB5BA260043B6B5 /* Logger.swift */; };
+		D2EAE6B51BD27BAA007F4516 /* LogMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1CA1BB5BA260043B6B5 /* LogMessage.swift */; };
+		D2EAE6B61BD27BAD007F4516 /* MessageFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1CB1BB5BA260043B6B5 /* MessageFormatter.swift */; };
+		D2EAE6C61BD27D1E007F4516 /* Timber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EAE6BC1BD27D1E007F4516 /* Timber.framework */; };
+		D2EAE6D31BD27D69007F4516 /* Timber.h in Headers */ = {isa = PBXBuildFile; fileRef = D2B3D1A91BB5B94A0043B6B5 /* Timber.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2EAE6D41BD27D81007F4516 /* Timber.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1CC1BB5BA260043B6B5 /* Timber.swift */; };
+		D2EAE6D51BD27D83007F4516 /* ConsoleLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1C61BB5BA260043B6B5 /* ConsoleLogger.swift */; };
+		D2EAE6D61BD27D92007F4516 /* FileLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1C81BB5BA260043B6B5 /* FileLogger.swift */; };
+		D2EAE6D71BD27D94007F4516 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1C91BB5BA260043B6B5 /* Logger.swift */; };
+		D2EAE6D81BD27D96007F4516 /* LogMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1CA1BB5BA260043B6B5 /* LogMessage.swift */; };
+		D2EAE6D91BD27D99007F4516 /* MessageFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1CB1BB5BA260043B6B5 /* MessageFormatter.swift */; };
+		D2EAE6DA1BD27D9E007F4516 /* TimberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1B51BB5B94A0043B6B5 /* TimberTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +44,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = D2B3D1A51BB5B94A0043B6B5;
 			remoteInfo = Timber;
+		};
+		D2EAE6A31BD27AB7007F4516 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2B3D19D1BB5B94A0043B6B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2EAE6971BD27AB7007F4516;
+			remoteInfo = "Timber-OSX";
+		};
+		D2EAE6C71BD27D1E007F4516 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2B3D19D1BB5B94A0043B6B5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2EAE6BB1BD27D1E007F4516;
+			remoteInfo = "Timber-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -43,6 +75,10 @@
 		D2B3D1CA1BB5BA260043B6B5 /* LogMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogMessage.swift; sourceTree = "<group>"; };
 		D2B3D1CB1BB5BA260043B6B5 /* MessageFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageFormatter.swift; sourceTree = "<group>"; };
 		D2B3D1CC1BB5BA260043B6B5 /* Timber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timber.swift; sourceTree = "<group>"; };
+		D2EAE6981BD27AB7007F4516 /* Timber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2EAE6A11BD27AB7007F4516 /* TimberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimberTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2EAE6BC1BD27D1E007F4516 /* Timber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2EAE6C51BD27D1E007F4516 /* TimberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimberTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +94,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2B3D1B11BB5B94A0043B6B5 /* Timber.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2EAE6941BD27AB7007F4516 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2EAE69E1BD27AB7007F4516 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2EAE6A21BD27AB7007F4516 /* Timber.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2EAE6B81BD27D1E007F4516 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2EAE6C21BD27D1E007F4516 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2EAE6C61BD27D1E007F4516 /* Timber.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +144,10 @@
 			children = (
 				D2B3D1A61BB5B94A0043B6B5 /* Timber.framework */,
 				D2B3D1B01BB5B94A0043B6B5 /* TimberTests.xctest */,
+				D2EAE6981BD27AB7007F4516 /* Timber.framework */,
+				D2EAE6A11BD27AB7007F4516 /* TimberTests.xctest */,
+				D2EAE6BC1BD27D1E007F4516 /* Timber.framework */,
+				D2EAE6C51BD27D1E007F4516 /* TimberTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,12 +204,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D2EAE6951BD27AB7007F4516 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2EAE6B01BD27B8E007F4516 /* Timber.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2EAE6B91BD27D1E007F4516 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2EAE6D31BD27D69007F4516 /* Timber.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		D2B3D1A51BB5B94A0043B6B5 /* Timber */ = {
+		D2B3D1A51BB5B94A0043B6B5 /* Timber-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D2B3D1BA1BB5B94A0043B6B5 /* Build configuration list for PBXNativeTarget "Timber" */;
+			buildConfigurationList = D2B3D1BA1BB5B94A0043B6B5 /* Build configuration list for PBXNativeTarget "Timber-iOS" */;
 			buildPhases = (
 				D2B3D1A11BB5B94A0043B6B5 /* Sources */,
 				D2B3D1A21BB5B94A0043B6B5 /* Frameworks */,
@@ -150,14 +236,14 @@
 			);
 			dependencies = (
 			);
-			name = Timber;
+			name = "Timber-iOS";
 			productName = Timber;
 			productReference = D2B3D1A61BB5B94A0043B6B5 /* Timber.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D2B3D1AF1BB5B94A0043B6B5 /* TimberTests */ = {
+		D2B3D1AF1BB5B94A0043B6B5 /* TimberTests-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D2B3D1BD1BB5B94A0043B6B5 /* Build configuration list for PBXNativeTarget "TimberTests" */;
+			buildConfigurationList = D2B3D1BD1BB5B94A0043B6B5 /* Build configuration list for PBXNativeTarget "TimberTests-iOS" */;
 			buildPhases = (
 				D2B3D1AC1BB5B94A0043B6B5 /* Sources */,
 				D2B3D1AD1BB5B94A0043B6B5 /* Frameworks */,
@@ -168,9 +254,81 @@
 			dependencies = (
 				D2B3D1B31BB5B94A0043B6B5 /* PBXTargetDependency */,
 			);
-			name = TimberTests;
+			name = "TimberTests-iOS";
 			productName = TimberTests;
 			productReference = D2B3D1B01BB5B94A0043B6B5 /* TimberTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D2EAE6971BD27AB7007F4516 /* Timber-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2EAE6AD1BD27AB7007F4516 /* Build configuration list for PBXNativeTarget "Timber-OSX" */;
+			buildPhases = (
+				D2EAE6931BD27AB7007F4516 /* Sources */,
+				D2EAE6941BD27AB7007F4516 /* Frameworks */,
+				D2EAE6951BD27AB7007F4516 /* Headers */,
+				D2EAE6961BD27AB7007F4516 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Timber-OSX";
+			productName = "Timber-OSX";
+			productReference = D2EAE6981BD27AB7007F4516 /* Timber.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D2EAE6A01BD27AB7007F4516 /* TimberTests-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2EAE6AE1BD27AB7007F4516 /* Build configuration list for PBXNativeTarget "TimberTests-OSX" */;
+			buildPhases = (
+				D2EAE69D1BD27AB7007F4516 /* Sources */,
+				D2EAE69E1BD27AB7007F4516 /* Frameworks */,
+				D2EAE69F1BD27AB7007F4516 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2EAE6A41BD27AB7007F4516 /* PBXTargetDependency */,
+			);
+			name = "TimberTests-OSX";
+			productName = "Timber-OSXTests";
+			productReference = D2EAE6A11BD27AB7007F4516 /* TimberTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D2EAE6BB1BD27D1E007F4516 /* Timber-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2EAE6CD1BD27D1E007F4516 /* Build configuration list for PBXNativeTarget "Timber-tvOS" */;
+			buildPhases = (
+				D2EAE6B71BD27D1E007F4516 /* Sources */,
+				D2EAE6B81BD27D1E007F4516 /* Frameworks */,
+				D2EAE6B91BD27D1E007F4516 /* Headers */,
+				D2EAE6BA1BD27D1E007F4516 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Timber-tvOS";
+			productName = "Timber-tvOS";
+			productReference = D2EAE6BC1BD27D1E007F4516 /* Timber.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D2EAE6C41BD27D1E007F4516 /* TimberTests-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2EAE6D01BD27D1E007F4516 /* Build configuration list for PBXNativeTarget "TimberTests-tvOS" */;
+			buildPhases = (
+				D2EAE6C11BD27D1E007F4516 /* Sources */,
+				D2EAE6C21BD27D1E007F4516 /* Frameworks */,
+				D2EAE6C31BD27D1E007F4516 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2EAE6C81BD27D1E007F4516 /* PBXTargetDependency */,
+			);
+			name = "TimberTests-tvOS";
+			productName = "Timber-tvOSTests";
+			productReference = D2EAE6C51BD27D1E007F4516 /* TimberTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -179,7 +337,7 @@
 		D2B3D19D1BB5B94A0043B6B5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Scott Petit";
 				TargetAttributes = {
@@ -188,6 +346,18 @@
 					};
 					D2B3D1AF1BB5B94A0043B6B5 = {
 						CreatedOnToolsVersion = 7.0;
+					};
+					D2EAE6971BD27AB7007F4516 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					D2EAE6A01BD27AB7007F4516 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					D2EAE6BB1BD27D1E007F4516 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					D2EAE6C41BD27D1E007F4516 = {
+						CreatedOnToolsVersion = 7.1;
 					};
 				};
 			};
@@ -203,8 +373,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D2B3D1A51BB5B94A0043B6B5 /* Timber */,
-				D2B3D1AF1BB5B94A0043B6B5 /* TimberTests */,
+				D2B3D1A51BB5B94A0043B6B5 /* Timber-iOS */,
+				D2B3D1AF1BB5B94A0043B6B5 /* TimberTests-iOS */,
+				D2EAE6971BD27AB7007F4516 /* Timber-OSX */,
+				D2EAE6A01BD27AB7007F4516 /* TimberTests-OSX */,
+				D2EAE6BB1BD27D1E007F4516 /* Timber-tvOS */,
+				D2EAE6C41BD27D1E007F4516 /* TimberTests-tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -218,6 +392,34 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		D2B3D1AE1BB5B94A0043B6B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2EAE6961BD27AB7007F4516 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2EAE69F1BD27AB7007F4516 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2EAE6BA1BD27D1E007F4516 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2EAE6C31BD27D1E007F4516 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -249,13 +451,65 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D2EAE6931BD27AB7007F4516 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2EAE6B31BD27BA0007F4516 /* FileLogger.swift in Sources */,
+				D2EAE6B11BD27B95007F4516 /* Timber.swift in Sources */,
+				D2EAE6B21BD27B98007F4516 /* ConsoleLogger.swift in Sources */,
+				D2EAE6B51BD27BAA007F4516 /* LogMessage.swift in Sources */,
+				D2EAE6B61BD27BAD007F4516 /* MessageFormatter.swift in Sources */,
+				D2EAE6B41BD27BA7007F4516 /* Logger.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2EAE69D1BD27AB7007F4516 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2EAE6AF1BD27B87007F4516 /* TimberTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2EAE6B71BD27D1E007F4516 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2EAE6D61BD27D92007F4516 /* FileLogger.swift in Sources */,
+				D2EAE6D41BD27D81007F4516 /* Timber.swift in Sources */,
+				D2EAE6D51BD27D83007F4516 /* ConsoleLogger.swift in Sources */,
+				D2EAE6D81BD27D96007F4516 /* LogMessage.swift in Sources */,
+				D2EAE6D91BD27D99007F4516 /* MessageFormatter.swift in Sources */,
+				D2EAE6D71BD27D94007F4516 /* Logger.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2EAE6C11BD27D1E007F4516 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2EAE6DA1BD27D9E007F4516 /* TimberTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		D2B3D1B31BB5B94A0043B6B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D2B3D1A51BB5B94A0043B6B5 /* Timber */;
+			target = D2B3D1A51BB5B94A0043B6B5 /* Timber-iOS */;
 			targetProxy = D2B3D1B21BB5B94A0043B6B5 /* PBXContainerItemProxy */;
+		};
+		D2EAE6A41BD27AB7007F4516 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2EAE6971BD27AB7007F4516 /* Timber-OSX */;
+			targetProxy = D2EAE6A31BD27AB7007F4516 /* PBXContainerItemProxy */;
+		};
+		D2EAE6C81BD27D1E007F4516 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2EAE6BB1BD27D1E007F4516 /* Timber-tvOS */;
+			targetProxy = D2EAE6C71BD27D1E007F4516 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -362,7 +616,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.hecho.Timber;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Timber;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -381,7 +635,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.hecho.Timber;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Timber;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -392,7 +646,7 @@
 				INFOPLIST_FILE = "TimberTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.hecho.TimberTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TimberTests;
 			};
 			name = Debug;
 		};
@@ -402,7 +656,139 @@
 				INFOPLIST_FILE = "TimberTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.hecho.TimberTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = TimberTests;
+			};
+			name = Release;
+		};
+		D2EAE6A91BD27AB7007F4516 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Timber/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.hecho.Timber-OSX";
+				PRODUCT_NAME = Timber;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D2EAE6AA1BD27AB7007F4516 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Timber/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.hecho.Timber-OSX";
+				PRODUCT_NAME = Timber;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D2EAE6AB1BD27AB7007F4516 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "TimberTests/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.hecho.Timber-OSXTests";
+				PRODUCT_NAME = TimberTests;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D2EAE6AC1BD27AB7007F4516 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "TimberTests/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.hecho.Timber-OSXTests";
+				PRODUCT_NAME = TimberTests;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D2EAE6CE1BD27D1E007F4516 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Timber/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.hecho.Timber-tvOS";
+				PRODUCT_NAME = Timber;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		D2EAE6CF1BD27D1E007F4516 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Timber/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.hecho.Timber-tvOS";
+				PRODUCT_NAME = Timber;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		D2EAE6D11BD27D1E007F4516 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "TimberTests/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.hecho.Timber-tvOSTests";
+				PRODUCT_NAME = TimberTests;
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		D2EAE6D21BD27D1E007F4516 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "TimberTests/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.hecho.Timber-tvOSTests";
+				PRODUCT_NAME = TimberTests;
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
@@ -418,7 +804,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D2B3D1BA1BB5B94A0043B6B5 /* Build configuration list for PBXNativeTarget "Timber" */ = {
+		D2B3D1BA1BB5B94A0043B6B5 /* Build configuration list for PBXNativeTarget "Timber-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D2B3D1BB1BB5B94A0043B6B5 /* Debug */,
@@ -427,7 +813,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D2B3D1BD1BB5B94A0043B6B5 /* Build configuration list for PBXNativeTarget "TimberTests" */ = {
+		D2B3D1BD1BB5B94A0043B6B5 /* Build configuration list for PBXNativeTarget "TimberTests-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D2B3D1BE1BB5B94A0043B6B5 /* Debug */,
@@ -435,6 +821,38 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D2EAE6AD1BD27AB7007F4516 /* Build configuration list for PBXNativeTarget "Timber-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2EAE6A91BD27AB7007F4516 /* Debug */,
+				D2EAE6AA1BD27AB7007F4516 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D2EAE6AE1BD27AB7007F4516 /* Build configuration list for PBXNativeTarget "TimberTests-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2EAE6AB1BD27AB7007F4516 /* Debug */,
+				D2EAE6AC1BD27AB7007F4516 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D2EAE6CD1BD27D1E007F4516 /* Build configuration list for PBXNativeTarget "Timber-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2EAE6CE1BD27D1E007F4516 /* Debug */,
+				D2EAE6CF1BD27D1E007F4516 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D2EAE6D01BD27D1E007F4516 /* Build configuration list for PBXNativeTarget "TimberTests-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2EAE6D11BD27D1E007F4516 /* Debug */,
+				D2EAE6D21BD27D1E007F4516 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

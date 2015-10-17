@@ -6,7 +6,7 @@
 //  Copyright © 2015 Scott Petit. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import Foundation;
 
 //! Project version number for Timber.
 FOUNDATION_EXPORT double TimberVersionNumber;

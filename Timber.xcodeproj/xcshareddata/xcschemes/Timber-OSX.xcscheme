@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0710"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D2B3D1A51BB5B94A0043B6B5"
+               BlueprintIdentifier = "D2EAE6971BD27AB7007F4516"
                BuildableName = "Timber.framework"
-               BlueprintName = "Timber"
+               BlueprintName = "Timber-OSX"
                ReferencedContainer = "container:Timber.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D2B3D1AF1BB5B94A0043B6B5"
+               BlueprintIdentifier = "D2EAE6A01BD27AB7007F4516"
                BuildableName = "TimberTests.xctest"
-               BlueprintName = "TimberTests"
+               BlueprintName = "TimberTests-OSX"
                ReferencedContainer = "container:Timber.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D2B3D1A51BB5B94A0043B6B5"
+            BlueprintIdentifier = "D2EAE6971BD27AB7007F4516"
             BuildableName = "Timber.framework"
-            BlueprintName = "Timber"
+            BlueprintName = "Timber-OSX"
             ReferencedContainer = "container:Timber.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D2B3D1A51BB5B94A0043B6B5"
+            BlueprintIdentifier = "D2EAE6971BD27AB7007F4516"
             BuildableName = "Timber.framework"
-            BlueprintName = "Timber"
+            BlueprintName = "Timber-OSX"
             ReferencedContainer = "container:Timber.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D2B3D1A51BB5B94A0043B6B5"
+            BlueprintIdentifier = "D2EAE6971BD27AB7007F4516"
             BuildableName = "Timber.framework"
-            BlueprintName = "Timber"
+            BlueprintName = "Timber-OSX"
             ReferencedContainer = "container:Timber.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
