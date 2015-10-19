@@ -1,5 +1,5 @@
 before_script:
-  - gem install xcpretty;
+  - sudo gem install xcpretty;
 
 types:
   - test
