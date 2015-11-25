@@ -10,11 +10,6 @@ import Foundation
 
 //MARK: Global
 
-public func LogEvent(message: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) {
-    let logMessage = LogMessage(message: message, logLevel: .Event, timestamp: NSDate(), file: file, function: function, lineNumber: line)
-    Timber.sharedTimber.log(logMessage)
-}
-
 public func LogError(message: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) {
     let logMessage = LogMessage(message: message, logLevel: .Error, timestamp: NSDate(), file: file, function: function, lineNumber: line)
     Timber.sharedTimber.log(logMessage)
