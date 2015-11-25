@@ -17,6 +17,9 @@
 		D2B3D1D11BB5BA260043B6B5 /* LogMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1CA1BB5BA260043B6B5 /* LogMessage.swift */; };
 		D2B3D1D21BB5BA260043B6B5 /* MessageFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1CB1BB5BA260043B6B5 /* MessageFormatter.swift */; };
 		D2B3D1D31BB5BA260043B6B5 /* Timber.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1CC1BB5BA260043B6B5 /* Timber.swift */; };
+		D2D2F30F1BD9E4FD001D7AB3 /* HTTPLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D2F30E1BD9E4FD001D7AB3 /* HTTPLogger.swift */; };
+		D2D2F3101BD9E4FD001D7AB3 /* HTTPLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D2F30E1BD9E4FD001D7AB3 /* HTTPLogger.swift */; };
+		D2D2F3111BD9E4FD001D7AB3 /* HTTPLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D2F30E1BD9E4FD001D7AB3 /* HTTPLogger.swift */; };
 		D2EAE6A21BD27AB7007F4516 /* Timber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2EAE6981BD27AB7007F4516 /* Timber.framework */; };
 		D2EAE6AF1BD27B87007F4516 /* TimberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1B51BB5B94A0043B6B5 /* TimberTests.swift */; };
 		D2EAE6B01BD27B8E007F4516 /* Timber.h in Headers */ = {isa = PBXBuildFile; fileRef = D2B3D1A91BB5B94A0043B6B5 /* Timber.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -75,6 +78,7 @@
 		D2B3D1CA1BB5BA260043B6B5 /* LogMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogMessage.swift; sourceTree = "<group>"; };
 		D2B3D1CB1BB5BA260043B6B5 /* MessageFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageFormatter.swift; sourceTree = "<group>"; };
 		D2B3D1CC1BB5BA260043B6B5 /* Timber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timber.swift; sourceTree = "<group>"; };
+		D2D2F30E1BD9E4FD001D7AB3 /* HTTPLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPLogger.swift; sourceTree = "<group>"; };
 		D2EAE6981BD27AB7007F4516 /* Timber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2EAE6A11BD27AB7007F4516 /* TimberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimberTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2EAE6BC1BD27D1E007F4516 /* Timber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +164,7 @@
 				D2B3D1C61BB5BA260043B6B5 /* ConsoleLogger.swift */,
 				D2B3D1C71BB5BA260043B6B5 /* DeviceLogger.swift */,
 				D2B3D1C81BB5BA260043B6B5 /* FileLogger.swift */,
+				D2D2F30E1BD9E4FD001D7AB3 /* HTTPLogger.swift */,
 				D2B3D1C91BB5BA260043B6B5 /* Logger.swift */,
 				D2B3D1CA1BB5BA260043B6B5 /* LogMessage.swift */,
 				D2B3D1CB1BB5BA260043B6B5 /* MessageFormatter.swift */,
@@ -436,6 +441,7 @@
 				D2B3D1CF1BB5BA260043B6B5 /* FileLogger.swift in Sources */,
 				D2B3D1CD1BB5BA260043B6B5 /* ConsoleLogger.swift in Sources */,
 				D2B3D1CE1BB5BA260043B6B5 /* DeviceLogger.swift in Sources */,
+				D2D2F30F1BD9E4FD001D7AB3 /* HTTPLogger.swift in Sources */,
 				D2B3D1D11BB5BA260043B6B5 /* LogMessage.swift in Sources */,
 				D2B3D1D31BB5BA260043B6B5 /* Timber.swift in Sources */,
 				D2B3D1D21BB5BA260043B6B5 /* MessageFormatter.swift in Sources */,
@@ -457,6 +463,7 @@
 			files = (
 				D2EAE6B31BD27BA0007F4516 /* FileLogger.swift in Sources */,
 				D2EAE6B11BD27B95007F4516 /* Timber.swift in Sources */,
+				D2D2F3101BD9E4FD001D7AB3 /* HTTPLogger.swift in Sources */,
 				D2EAE6B21BD27B98007F4516 /* ConsoleLogger.swift in Sources */,
 				D2EAE6B51BD27BAA007F4516 /* LogMessage.swift in Sources */,
 				D2EAE6B61BD27BAD007F4516 /* MessageFormatter.swift in Sources */,
@@ -478,6 +485,7 @@
 			files = (
 				D2EAE6D61BD27D92007F4516 /* FileLogger.swift in Sources */,
 				D2EAE6D41BD27D81007F4516 /* Timber.swift in Sources */,
+				D2D2F3111BD9E4FD001D7AB3 /* HTTPLogger.swift in Sources */,
 				D2EAE6D51BD27D83007F4516 /* ConsoleLogger.swift in Sources */,
 				D2EAE6D81BD27D96007F4516 /* LogMessage.swift in Sources */,
 				D2EAE6D91BD27D99007F4516 /* MessageFormatter.swift in Sources */,
@@ -829,6 +837,7 @@
 				D2EAE6AA1BD27AB7007F4516 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2EAE6AE1BD27AB7007F4516 /* Build configuration list for PBXNativeTarget "TimberTests-OSX" */ = {
 			isa = XCConfigurationList;
@@ -837,6 +846,7 @@
 				D2EAE6AC1BD27AB7007F4516 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2EAE6CD1BD27D1E007F4516 /* Build configuration list for PBXNativeTarget "Timber-tvOS" */ = {
 			isa = XCConfigurationList;
@@ -845,6 +855,7 @@
 				D2EAE6CF1BD27D1E007F4516 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2EAE6D01BD27D1E007F4516 /* Build configuration list for PBXNativeTarget "TimberTests-tvOS" */ = {
 			isa = XCConfigurationList;
@@ -853,6 +864,7 @@
 				D2EAE6D21BD27D1E007F4516 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

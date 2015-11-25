@@ -7,4 +7,5 @@ types:
 Timber:
   type: test
   script:
-    - xcodebuild -verbose -scheme Timber -destination "platform=iOS Simulator,name=iPhone 6 Plus,OS=9.0" test | xcpretty -c
+    - xcodebuild -verbose -scheme Timber-iOS -destination "platform=iOS Simulator,name=iPhone 6 Plus,OS=9.1" test | xcpretty -c
+    - xcodebuild -verbose -scheme Timber-tvOS -destination "platform=tvOS Simulator,name=Apple TV 1080p" test | xcpretty -c

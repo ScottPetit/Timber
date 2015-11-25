@@ -15,6 +15,7 @@ public protocol LoggerType {
 
 public enum LogLevel: Int, Comparable {
     case None = 0
+    case Event
     case Error
     case Warn
     case Info
@@ -25,6 +26,8 @@ public enum LogLevel: Int, Comparable {
         switch self {
         case .None:
             return "None"
+        case .Event:
+            return "Event"
         case .Error:
             return "ERROR"
         case .Warn:
