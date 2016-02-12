@@ -148,7 +148,7 @@ class DeviceLoggerViewController: UIViewController {
         var log = ""
         for message in messages {
             log += messageFormatter.formatLogMessage(message)
-            log += "\r\n"
+            log += "<br>\n"
         }
         let data = log.dataUsingEncoding(NSUTF8StringEncoding)
         
