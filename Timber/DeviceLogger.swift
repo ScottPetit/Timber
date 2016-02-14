@@ -16,6 +16,7 @@ public class DeviceLogger: NSObject, LoggerType {
 
     public static let sharedLogger = DeviceLogger()
     var messages = [LogMessage]()
+    var toRecipients = [String]()
     private var window: UIWindow?
     
     override init() {
@@ -29,7 +30,7 @@ public class DeviceLogger: NSObject, LoggerType {
     }
     
     public func viewController() -> UIViewController {
-        let deviceLogger = DeviceLoggerViewController(messages: messages.reverse())
+        let deviceLogger = DeviceLoggerViewController(messages: messages.reverse(), toRecipients: toRecipients)
         deviceLogger.title = "TIMBER"
         let navigationController = UINavigationController(rootViewController: deviceLogger)
 
@@ -106,12 +107,14 @@ public class DeviceLogger: NSObject, LoggerType {
 class DeviceLoggerViewController: UIViewController {
     
     let tableView = UITableView()
+    var toRecipients = [String]()
     var messages: [LogMessage]
     let messageFormatter = MessageFormatter()
     
-    convenience init(messages: [LogMessage]) {
+    convenience init(messages: [LogMessage], toRecipients: [String]) {
         self.init(nibName: nil, bundle: nil)
         self.messages = messages
+        self.toRecipients = toRecipients
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -154,7 +157,7 @@ class DeviceLoggerViewController: UIViewController {
         
         let mailComposeViewController = MFMailComposeViewController()
         mailComposeViewController.setSubject("Logs")
-        mailComposeViewController.setToRecipients(["petit.scott@gmail.com"])
+        mailComposeViewController.setToRecipients(toRecipients)
         mailComposeViewController.mailComposeDelegate = self
         if let data = data {
             mailComposeViewController.addAttachmentData(data, mimeType: "text/plain", fileName: "Timber.log")
