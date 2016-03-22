@@ -49,7 +49,7 @@ public class DeviceLogger: NSObject, LoggerType {
         
         self.window = window
         
-        let gesture = UITapGestureRecognizer(target: self, action: Selector("handleGesture:"))
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(DeviceLogger.handleGesture(_:)))
         gesture.numberOfTapsRequired = 3
         gesture.numberOfTouchesRequired = 4
         
@@ -96,7 +96,7 @@ public class DeviceLogger: NSObject, LoggerType {
     //MARK: Notifications
     
     private func addObservers() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "didReceiveMemoryWarningNotification:", name: UIApplicationDidReceiveMemoryWarningNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(DeviceLogger.didReceiveMemoryWarningNotification(_:)), name: UIApplicationDidReceiveMemoryWarningNotification, object: nil)
     }
     
     func didReceiveMemoryWarningNotification(note: NSNotification) {
@@ -130,10 +130,10 @@ class DeviceLoggerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.setLeftBarButtonItem(UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "doneButtonPressed"), animated: true)
+        self.navigationItem.setLeftBarButtonItem(UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(DeviceLoggerViewController.doneButtonPressed)), animated: true)
         
         if MFMailComposeViewController.canSendMail() {
-            self.navigationItem.setRightBarButtonItem(UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "shareButtonPressed"), animated: true)
+            self.navigationItem.setRightBarButtonItem(UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(DeviceLoggerViewController.shareButtonPressed)), animated: true)
         }
         
         setUpTableView()
