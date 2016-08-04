@@ -29,12 +29,29 @@ public class DeviceLogger: NSObject, LoggerType {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    public func viewController() -> UIViewController {
+    public func loggerViewController() -> UIViewController {
         let deviceLogger = DeviceLoggerViewController(messages: messages.reverse(), toRecipients: toRecipients)
         deviceLogger.title = "TIMBER"
         let navigationController = UINavigationController(rootViewController: deviceLogger)
-
         return navigationController
+    }
+    
+    public func messageViewController() -> UIViewController {
+        var log = ""
+        for message in messages.reverse() {
+            log += messageFormatter.formatLogMessage(message)
+            log += "<br>\n"
+        }
+        let data = log.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let mailComposeViewController = MFMailComposeViewController()
+        mailComposeViewController.setSubject("Logs")
+        mailComposeViewController.setToRecipients(toRecipients)
+        mailComposeViewController.mailComposeDelegate = self
+        if let data = data {
+            mailComposeViewController.addAttachmentData(data, mimeType: "text/plain", fileName: "Timber.log")
+        }
+        return mailComposeViewController
     }
     
     /**
@@ -59,7 +76,7 @@ public class DeviceLogger: NSObject, LoggerType {
     func handleGesture(gesture: UIGestureRecognizer) {
         if let window = window {
             let rootViewController = window.rootViewController
-            rootViewController?.presentViewController(viewController(), animated: true, completion: nil)
+            rootViewController?.presentViewController(loggerViewController(), animated: true, completion: nil)
         }
     }
     
@@ -101,6 +118,12 @@ public class DeviceLogger: NSObject, LoggerType {
     
     func didReceiveMemoryWarningNotification(note: NSNotification) {
         messages.removeAll()
+    }
+}
+
+extension DeviceLogger: MFMailComposeViewControllerDelegate {
+    public func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
