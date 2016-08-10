@@ -19,19 +19,20 @@ public struct FileLogger: LoggerType {
     
     public var messageFormatter: MessageFormatterType = MessageFormatter()
     
-    public func logMessage(message: LogMessage) {
+    public func logMessage(_ message: LogMessage) {
         let currentData = FileManager.currentLogFileData()
-        let mutableData = NSMutableData(data: currentData)
+        var mutableData = Data(currentData)
         
         var messageToLog = messageFormatter.formatLogMessage(message)
         messageToLog += "\n"
         
-        if let dataToAppend = messageToLog.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
-            mutableData.appendData(dataToAppend)
+        if let dataToAppend = messageToLog.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+            mutableData.append(dataToAppend)
         }
         
         if let filePath = FileManager.currentLogFilePath() {
-            mutableData.writeToFile(filePath, atomically: false)
+            let fileUrl = URL(fileURLWithPath: filePath)
+            try? mutableData.write(to: fileUrl, options: Data.WritingOptions())
         }
     }
     
@@ -41,25 +42,25 @@ struct FileManager {
     
     static let userDefaultsKey = "com.Timber.currentLogFile"
     static let maximumLogFileSize = 1024 * 1024 // 1 mb
-    static let maximumFileExsitenceInterval: NSTimeInterval = 60 * 60 * 24 * 180 // 180 days
+    static let maximumFileExsitenceInterval: TimeInterval = 60 * 60 * 24 * 180 // 180 days
     
     static func currentLogFilePath() -> String? {
-        if let path: AnyObject = NSUserDefaults.standardUserDefaults().objectForKey(userDefaultsKey) {
+        if let path: AnyObject = UserDefaults.standard.object(forKey: userDefaultsKey) {
             return path as? String
         } else {
             return createNewLogFilePath()
         }
     }
     
-    static func shouldCreateNewLogFileForData(data: NSData) -> Bool {
-        return data.length > maximumLogFileSize
+    static func shouldCreateNewLogFileForData(_ data: Data) -> Bool {
+        return data.count > maximumLogFileSize
     }
     
-    static func createNewLogFilePath() -> String? {
+    @discardableResult static func createNewLogFilePath() -> String? {
         if let logsDirectory = defaultLogsDirectory() {
-            let newLogFilePath = logsDirectory.stringByAppendingPathComponent(newLogFileName())
-            NSUserDefaults.standardUserDefaults().setObject(newLogFilePath, forKey: userDefaultsKey)
-            NSUserDefaults.standardUserDefaults().synchronize()
+            let newLogFilePath = logsDirectory.appendingPathComponent(newLogFileName())
+            UserDefaults.standard.set(newLogFilePath, forKey: userDefaultsKey)
+            UserDefaults.standard.synchronize()
             
             return newLogFilePath
         }
@@ -70,10 +71,10 @@ struct FileManager {
     static func newLogFileName() -> String {
         let appName = applicationName()
         
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy'-'MM'-'dd'_'HH'-'mm'"
-        dateFormatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
-        let formattedDate = dateFormatter.stringFromDate(NSDate())
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        let formattedDate = dateFormatter.string(from: Date())
         
         let newLogFileName = "\(appName)_\(formattedDate).log"
         
@@ -81,7 +82,7 @@ struct FileManager {
     }
     
     static func applicationName() -> String {
-        let processName = NSProcessInfo.processInfo().processName
+        let processName = ProcessInfo.processInfo.processName
         if processName.characters.count > 0 {
             return processName
         } else {
@@ -91,15 +92,15 @@ struct FileManager {
     
     static func defaultLogsDirectory() -> NSString? {
         // Update how we get file URLs per Apple Technical Note https://developer.apple.com/library/ios/technotes/tn2406/_index.html
-        let cachesDirectoryPathURL = NSFileManager.defaultManager().URLsForDirectory(.CachesDirectory, inDomains: .UserDomainMask).last as NSURL!
+        let cachesDirectoryPathURL = Foundation.FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).last as URL!
         
-        if cachesDirectoryPathURL.fileURL {
-            if let cachesDirectoryPath = cachesDirectoryPathURL.path as NSString? {
-                let logsDirectory = cachesDirectoryPath.stringByAppendingPathComponent("Timber")
+        if (cachesDirectoryPathURL?.isFileURL)! {
+            if let cachesDirectoryPath = cachesDirectoryPathURL?.path as NSString? {
+                let logsDirectory = cachesDirectoryPath.appendingPathComponent("Timber")
                 
-                if !NSFileManager.defaultManager().fileExistsAtPath(logsDirectory) {
+                if !Foundation.FileManager.default.fileExists(atPath: logsDirectory) {
                     do {
-                        try NSFileManager.defaultManager().createDirectoryAtPath(logsDirectory, withIntermediateDirectories: true, attributes: nil)
+                        try Foundation.FileManager.default.createDirectory(atPath: logsDirectory, withIntermediateDirectories: true, attributes: nil)
                     } catch _ {
                     }
                 }
@@ -111,9 +112,9 @@ struct FileManager {
         return nil
     }
     
-    static func currentLogFileData() -> NSData {
+    static func currentLogFileData() -> Data {
         if let filePath = currentLogFilePath() {
-            if let data = NSData(contentsOfFile: filePath) {
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: filePath)) {
                 if shouldCreateNewLogFileForData(data) {
                     createNewLogFilePath()
                 }
@@ -122,16 +123,16 @@ struct FileManager {
             }
         }
         
-        return NSData()
+        return Data()
     }
     
     static func purgeOldFiles() {
         if let logsDirectory = defaultLogsDirectory() {
-            TrashMan.takeOutFilesInDirectory(logsDirectory, withExtension: "log", notModifiedSince: NSDate(timeIntervalSinceNow: -maximumFileExsitenceInterval))
+            TrashMan.takeOutFilesInDirectory(logsDirectory, withExtension: "log", notModifiedSince: Date(timeIntervalSinceNow: -maximumFileExsitenceInterval))
         }
     }
     
-    static func purgeOldestFilesGreaterThanCount(count: Int) {
+    static func purgeOldestFilesGreaterThanCount(_ count: Int) {
         if let logsDirectory = defaultLogsDirectory() {
             TrashMan.takeOutOldestFilesInDirectory(logsDirectory, greaterThanCount: count)
         }
@@ -140,27 +141,27 @@ struct FileManager {
 
 struct TrashMan {
     
-    static func takeOutFilesInDirectory(directoryPath: NSString, notModifiedSince minimumModifiedDate: NSDate) {
+    static func takeOutFilesInDirectory(_ directoryPath: NSString, notModifiedSince minimumModifiedDate: Date) {
         takeOutFilesInDirectory(directoryPath, withExtension: nil, notModifiedSince: minimumModifiedDate)
     }
     
-    static func takeOutFilesInDirectory(directoryPath: NSString, withExtension fileExtension: String?, notModifiedSince minimumModifiedDate: NSDate) {
-        let fileURL = NSURL(fileURLWithPath: directoryPath as String, isDirectory: true)
-        let fileManager = NSFileManager.defaultManager()
+    static func takeOutFilesInDirectory(_ directoryPath: NSString, withExtension fileExtension: String?, notModifiedSince minimumModifiedDate: Date) {
+        let fileURL = URL(fileURLWithPath: directoryPath as String, isDirectory: true)
+        let fileManager = Foundation.FileManager.default
         let contents: [AnyObject]?
         do {
-            contents = try fileManager.contentsOfDirectoryAtURL(fileURL, includingPropertiesForKeys: [NSURLAttributeModificationDateKey], options: .SkipsHiddenFiles)
+            contents = try fileManager.contentsOfDirectory(at: fileURL, includingPropertiesForKeys: [URLResourceKey.attributeModificationDateKey], options: .skipsHiddenFiles)
         } catch _ {
             contents = nil
         }
         
-        if let files = contents as? [NSURL] {
+        if let files = contents as? [URL] {
             for file in files {
                 var fileDate: AnyObject?
                 
                 let haveDate: Bool
                 do {
-                    try file.getResourceValue(&fileDate, forKey: NSURLAttributeModificationDateKey)
+                    try (file as NSURL).getResourceValue(&fileDate, forKey: URLResourceKey.attributeModificationDateKey)
                     haveDate = true
                 } catch _ {
                     haveDate = false
@@ -180,33 +181,33 @@ struct TrashMan {
                 }
                 
                 do {
-                    try fileManager.removeItemAtURL(file)
+                    try fileManager.removeItem(at: file)
                 } catch _ {
                 }
             }
         }
     }
     
-    static func takeOutOldestFilesInDirectory(directoryPath: NSString, greaterThanCount count: Int) {
-        let directoryURL = NSURL(fileURLWithPath: directoryPath as String, isDirectory: true)
+    static func takeOutOldestFilesInDirectory(_ directoryPath: NSString, greaterThanCount count: Int) {
+        let directoryURL = URL(fileURLWithPath: directoryPath as String, isDirectory: true)
         let contents: [AnyObject]?
         do {
-            contents = try NSFileManager.defaultManager().contentsOfDirectoryAtURL(directoryURL, includingPropertiesForKeys: [NSURLCreationDateKey], options: .SkipsHiddenFiles)
+            contents = try Foundation.FileManager.default.contentsOfDirectory(at: directoryURL, includingPropertiesForKeys: [URLResourceKey.creationDateKey], options: .skipsHiddenFiles)
         } catch _ {
             contents = nil
         }
         
-        if let files = contents as? [NSURL] {
+        if let files = contents as? [URL] {
             if count >= files.count {
                 return
             }
             
-            let sortedFiles = files.sort({ (firstFile: NSURL, secondFile: NSURL) -> Bool in
+            let sortedFiles = files.sorted(by: { (firstFile: URL, secondFile: URL) -> Bool in
                 var firstFileObject: AnyObject?
                 
                 let haveFirstDate: Bool
                 do {
-                    try firstFile.getResourceValue(&firstFileObject, forKey: NSURLCreationDateKey)
+                    try (firstFile as NSURL).getResourceValue(&firstFileObject, forKey: URLResourceKey.creationDateKey)
                     haveFirstDate = true
                 } catch {
                     haveFirstDate = false
@@ -219,7 +220,7 @@ struct TrashMan {
                 
                 let haveSecondDate: Bool
                 do {
-                    try secondFile.getResourceValue(&secondFileObject, forKey: NSURLCreationDateKey)
+                    try (secondFile as NSURL).getResourceValue(&secondFileObject, forKey: URLResourceKey.creationDateKey)
                     haveSecondDate = true
                 } catch {
                     haveSecondDate = false
@@ -228,17 +229,17 @@ struct TrashMan {
                     return true
                 }
                 
-                let firstFileDate = firstFileObject as! NSDate
-                let secondFileDate = secondFileObject as! NSDate
+                let firstFileDate = firstFileObject as! Date
+                let secondFileDate = secondFileObject as! Date
                 
                 let comparisonResult = firstFileDate.compare(secondFileDate)
-                return comparisonResult == NSComparisonResult.OrderedDescending
+                return comparisonResult == ComparisonResult.orderedDescending
             })
             
-            for (index, fileURL) in sortedFiles.enumerate() {
+            for (index, fileURL) in sortedFiles.enumerated() {
                 if index >= count {
                     do {
-                        try NSFileManager.defaultManager().removeItemAtURL(fileURL)
+                        try Foundation.FileManager.default.removeItem(at: fileURL)
                     } catch {
                     }
                 }

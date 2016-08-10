@@ -10,47 +10,47 @@ import Foundation
 
 //MARK: Global
 
-public func LogError(message: String, file: String = #file, function: String = #function, line: Int = #line) {
-    let logMessage = LogMessage(message: message, logLevel: .Error, timestamp: NSDate(), file: file, function: function, lineNumber: line)
+public func LogError(_ message: String, file: String = #file, function: String = #function, line: Int = #line) {
+    let logMessage = LogMessage(message: message, logLevel: .error, timestamp: Date(), file: file, function: function, lineNumber: line)
     Timber.sharedTimber.log(logMessage)
 }
 
-public func LogError(error: NSError?, file: String = #file, function: String = #function, line: Int = #line) {
+public func LogError(_ error: NSError?, file: String = #file, function: String = #function, line: Int = #line) {
     if let error = error {
-        let logMessage = LogMessage(message: error.description, logLevel: .Error, timestamp: NSDate(), file: file, function: function, lineNumber: line)
+        let logMessage = LogMessage(message: error.description, logLevel: .error, timestamp: Date(), file: file, function: function, lineNumber: line)
         Timber.sharedTimber.log(logMessage)
     }
 }
 
-public func LogWarn(message: String, file: String = #file, function: String = #function, line: Int = #line) {
-    let logMessage = LogMessage(message: message, logLevel: .Warn, timestamp: NSDate(), file: file, function: function, lineNumber: line)
+public func LogWarn(_ message: String, file: String = #file, function: String = #function, line: Int = #line) {
+    let logMessage = LogMessage(message: message, logLevel: .warn, timestamp: Date(), file: file, function: function, lineNumber: line)
     Timber.sharedTimber.log(logMessage)
 }
 
-public func LogInfo(message: String, file: String = #file, function: String = #function, line: Int = #line) {
-    let logMessage = LogMessage(message: message, logLevel: .Info, timestamp: NSDate(), file: file, function: function, lineNumber: line)
+public func LogInfo(_ message: String, file: String = #file, function: String = #function, line: Int = #line) {
+    let logMessage = LogMessage(message: message, logLevel: .info, timestamp: Date(), file: file, function: function, lineNumber: line)
     Timber.sharedTimber.log(logMessage)
 }
 
-public func LogDebug(message: String, file: String = #file, function: String = #function, line: Int = #line) {
-    let logMessage = LogMessage(message: message, logLevel: .Debug, timestamp: NSDate(), file: file, function: function, lineNumber: line)
+public func LogDebug(_ message: String, file: String = #file, function: String = #function, line: Int = #line) {
+    let logMessage = LogMessage(message: message, logLevel: .debug, timestamp: Date(), file: file, function: function, lineNumber: line)
     Timber.sharedTimber.log(logMessage)
 }
 
-public func LogVerbose(message: String, file: String = #file, function: String = #function, line: Int = #line) {
-    let logMessage = LogMessage(message: message, logLevel: .Verbose, timestamp: NSDate(), file: file, function: function, lineNumber: line)
+public func LogVerbose(_ message: String, file: String = #file, function: String = #function, line: Int = #line) {
+    let logMessage = LogMessage(message: message, logLevel: .verbose, timestamp: Date(), file: file, function: function, lineNumber: line)
     Timber.sharedTimber.log(logMessage)
 }
 
-public func Log(message: String, file: String = #file, function: String = #function, line: Int = #line) {
+public func Log(_ message: String, file: String = #file, function: String = #function, line: Int = #line) {
     LogInfo(message, file: file, function: function, line: line)
 }
 
-public func Trace(file: String = #file, function: String = #function, line: Int = #line) {
+public func Trace(_ file: String = #file, function: String = #function, line: Int = #line) {
     LogInfo("", file: file, function: function, line: line)
 }
 
-public func LogBasic(message: String) {
+public func LogBasic(_ message: String) {
     
 }
 
@@ -58,7 +58,7 @@ public class Timber {
 
     static let sharedTimber = Timber()
     private var loggers = [LoggerType]()
-    private var logLevel = LogLevel.Verbose
+    private var logLevel = LogLevel.verbose
     
     private init() {
         
@@ -66,21 +66,21 @@ public class Timber {
     
     //MARK: Public
     
-    public class func setLogLevel(level: LogLevel) {
+    public class func setLogLevel(_ level: LogLevel) {
         Timber.sharedTimber.logLevel = level
     }
     
-    public class func addLogger(logger: LoggerType) {
+    public class func addLogger(_ logger: LoggerType) {
         Timber.sharedTimber.addLogger(logger)
     }
     
     //MARK: Private
     
-    private func addLogger(logger: LoggerType) {
+    private func addLogger(_ logger: LoggerType) {
         loggers.append(logger)
     }
     
-    private func log(logMessage: LogMessage) {
+    private func log(_ logMessage: LogMessage) {
         if logMessage.logLevel > Timber.sharedTimber.logLevel {
             return
         }

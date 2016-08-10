@@ -18,7 +18,7 @@ public struct ConsoleLogger: LoggerType {
     
     public var messageFormatter: MessageFormatterType = MessageFormatter()
     
-    public func logMessage(message: LogMessage) {
+    public func logMessage(_ message: LogMessage) {
         let messageToLog = messageFormatter.formatLogMessage(message)
         
         print(messageToLog)

@@ -264,9 +264,9 @@
 			productReference = D2B3D1B01BB5B94A0043B6B5 /* TimberTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D2EAE6971BD27AB7007F4516 /* Timber-OSX */ = {
+		D2EAE6971BD27AB7007F4516 /* Timber-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D2EAE6AD1BD27AB7007F4516 /* Build configuration list for PBXNativeTarget "Timber-OSX" */;
+			buildConfigurationList = D2EAE6AD1BD27AB7007F4516 /* Build configuration list for PBXNativeTarget "Timber-macOS" */;
 			buildPhases = (
 				D2EAE6931BD27AB7007F4516 /* Sources */,
 				D2EAE6941BD27AB7007F4516 /* Frameworks */,
@@ -277,14 +277,14 @@
 			);
 			dependencies = (
 			);
-			name = "Timber-OSX";
+			name = "Timber-macOS";
 			productName = "Timber-OSX";
 			productReference = D2EAE6981BD27AB7007F4516 /* Timber.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D2EAE6A01BD27AB7007F4516 /* TimberTests-OSX */ = {
+		D2EAE6A01BD27AB7007F4516 /* TimberTests-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D2EAE6AE1BD27AB7007F4516 /* Build configuration list for PBXNativeTarget "TimberTests-OSX" */;
+			buildConfigurationList = D2EAE6AE1BD27AB7007F4516 /* Build configuration list for PBXNativeTarget "TimberTests-macOS" */;
 			buildPhases = (
 				D2EAE69D1BD27AB7007F4516 /* Sources */,
 				D2EAE69E1BD27AB7007F4516 /* Frameworks */,
@@ -295,7 +295,7 @@
 			dependencies = (
 				D2EAE6A41BD27AB7007F4516 /* PBXTargetDependency */,
 			);
-			name = "TimberTests-OSX";
+			name = "TimberTests-macOS";
 			productName = "Timber-OSXTests";
 			productReference = D2EAE6A11BD27AB7007F4516 /* TimberTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -343,26 +343,32 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Scott Petit";
 				TargetAttributes = {
 					D2B3D1A51BB5B94A0043B6B5 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0800;
 					};
 					D2B3D1AF1BB5B94A0043B6B5 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0800;
 					};
 					D2EAE6971BD27AB7007F4516 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
 					};
 					D2EAE6A01BD27AB7007F4516 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
 					};
 					D2EAE6BB1BD27D1E007F4516 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
 					};
 					D2EAE6C41BD27D1E007F4516 = {
 						CreatedOnToolsVersion = 7.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -380,8 +386,8 @@
 			targets = (
 				D2B3D1A51BB5B94A0043B6B5 /* Timber-iOS */,
 				D2B3D1AF1BB5B94A0043B6B5 /* TimberTests-iOS */,
-				D2EAE6971BD27AB7007F4516 /* Timber-OSX */,
-				D2EAE6A01BD27AB7007F4516 /* TimberTests-OSX */,
+				D2EAE6971BD27AB7007F4516 /* Timber-macOS */,
+				D2EAE6A01BD27AB7007F4516 /* TimberTests-macOS */,
 				D2EAE6BB1BD27D1E007F4516 /* Timber-tvOS */,
 				D2EAE6C41BD27D1E007F4516 /* TimberTests-tvOS */,
 			);
@@ -511,7 +517,7 @@
 		};
 		D2EAE6A41BD27AB7007F4516 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D2EAE6971BD27AB7007F4516 /* Timber-OSX */;
+			target = D2EAE6971BD27AB7007F4516 /* Timber-macOS */;
 			targetProxy = D2EAE6A31BD27AB7007F4516 /* PBXContainerItemProxy */;
 		};
 		D2EAE6C81BD27D1E007F4516 /* PBXTargetDependency */ = {
@@ -536,8 +542,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -585,8 +593,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -617,6 +627,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -629,6 +640,7 @@
 				PRODUCT_NAME = Timber;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -636,6 +648,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -647,6 +660,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.hecho.Timber;
 				PRODUCT_NAME = Timber;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -657,6 +672,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.hecho.TimberTests;
 				PRODUCT_NAME = TimberTests;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -667,13 +683,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.hecho.TimberTests;
 				PRODUCT_NAME = TimberTests;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		D2EAE6A91BD27AB7007F4516 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -684,17 +702,18 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.hecho.Timber-OSX";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.hecho.Timber-macOS";
 				PRODUCT_NAME = Timber;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		D2EAE6AA1BD27AB7007F4516 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -705,10 +724,12 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.hecho.Timber-OSX";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.hecho.Timber-macOS";
 				PRODUCT_NAME = Timber;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -723,6 +744,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.hecho.Timber-OSXTests";
 				PRODUCT_NAME = TimberTests;
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -737,12 +759,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.hecho.Timber-OSXTests";
 				PRODUCT_NAME = TimberTests;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		D2EAE6CE1BD27D1E007F4516 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -754,6 +779,7 @@
 				PRODUCT_NAME = Timber;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -762,6 +788,7 @@
 		D2EAE6CF1BD27D1E007F4516 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -773,6 +800,8 @@
 				PRODUCT_NAME = Timber;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -786,6 +815,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.hecho.Timber-tvOSTests";
 				PRODUCT_NAME = TimberTests;
 				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
@@ -798,6 +828,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.hecho.Timber-tvOSTests";
 				PRODUCT_NAME = TimberTests;
 				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
@@ -832,7 +864,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D2EAE6AD1BD27AB7007F4516 /* Build configuration list for PBXNativeTarget "Timber-OSX" */ = {
+		D2EAE6AD1BD27AB7007F4516 /* Build configuration list for PBXNativeTarget "Timber-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D2EAE6A91BD27AB7007F4516 /* Debug */,
@@ -841,7 +873,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D2EAE6AE1BD27AB7007F4516 /* Build configuration list for PBXNativeTarget "TimberTests-OSX" */ = {
+		D2EAE6AE1BD27AB7007F4516 /* Build configuration list for PBXNativeTarget "TimberTests-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D2EAE6AB1BD27AB7007F4516 /* Debug */,

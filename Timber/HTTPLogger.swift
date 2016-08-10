@@ -8,10 +8,10 @@
 
 public class HTTPLogger: LoggerType {
 
-    let URL: NSURL
+    let URL: Foundation.URL
     let method: String
     
-    init(URL: NSURL, method: String) {
+    init(URL: Foundation.URL, method: String) {
         self.URL = URL
         self.method = method
     }
@@ -20,20 +20,20 @@ public class HTTPLogger: LoggerType {
     
     public var messageFormatter: MessageFormatterType = MessageFormatter()
     
-    public func logMessage(message: LogMessage) {
+    public func logMessage(_ message: LogMessage) {
         let parameters = ["message" : message.message]
-        
-        let URLRequest = NSMutableURLRequest(URL: URL)
-        URLRequest.HTTPMethod = method
+
+        var request = URLRequest(url: URL)
+        request.httpMethod = method
         do {
-            let data = try NSJSONSerialization.dataWithJSONObject(parameters, options: NSJSONWritingOptions())
-            URLRequest.HTTPBody = data
+            let data = try JSONSerialization.data(withJSONObject: parameters, options: JSONSerialization.WritingOptions())
+            request.httpBody = data
         } catch {
-            
+
         }
         
-        let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
-        let dataTask = session.dataTaskWithRequest(URLRequest)
+        let session = URLSession(configuration: URLSessionConfiguration.default)
+        let dataTask = session.dataTask(with: request)
         
         dataTask.resume()
     }

@@ -10,30 +10,30 @@ import Foundation
 
 public protocol LoggerType {
     var messageFormatter: MessageFormatterType { get }
-    func logMessage(message: LogMessage)
+    func logMessage(_ message: LogMessage)
 }
 
 public enum LogLevel: Int, Comparable {
-    case None = 0
-    case Error
-    case Warn
-    case Info
-    case Debug
-    case Verbose
+    case none = 0
+    case error
+    case warn
+    case info
+    case debug
+    case verbose
     
     func toString() -> String {
         switch self {
-        case .None:
+        case .none:
             return "None"
-        case .Error:
+        case .error:
             return "ERROR"
-        case .Warn:
+        case .warn:
             return "WARNING"
-        case .Info:
+        case .info:
             return "INFO"
-        case .Debug:
+        case .debug:
             return "DEBUG"
-        case .Verbose:
+        case .verbose:
             return "VERBOSE"
         }
     }

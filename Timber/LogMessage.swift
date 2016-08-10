@@ -12,18 +12,18 @@ public struct LogMessage {
     
     public let message: String
     public let logLevel: LogLevel
-    public let timestamp: NSDate
+    public let timestamp: Date
     public let file: String
     public let function: String
     public let lineNumber: Int
     
-    init(message: String, logLevel: LogLevel, timestamp: NSDate, file: String, function: String, lineNumber: Int) {
+    init(message: String, logLevel: LogLevel, timestamp: Date, file: String, function: String, lineNumber: Int) {
         self.message = message
         self.logLevel = logLevel
         self.timestamp = timestamp
         let stringFile = NSString(string: file)
         let lastPathComponent = NSString(string: stringFile.lastPathComponent)
-        self.file = lastPathComponent.stringByDeletingPathExtension
+        self.file = lastPathComponent.deletingPathExtension
         self.function = function
         self.lineNumber = lineNumber
     }
@@ -33,7 +33,7 @@ public class PersistableLogMessage: NSObject, NSCoding {
     
     var message: String
     var logLevel: LogLevel
-    var timestamp: NSDate
+    var timestamp: Date
     var file: String
     var function: String
     var lineNumber: Int
@@ -47,23 +47,23 @@ public class PersistableLogMessage: NSObject, NSCoding {
         self.lineNumber = logMessage.lineNumber
     }
     
-    public func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(message, forKey: "message")
-        aCoder.encodeInteger(logLevel.rawValue, forKey: "logLevel")
-        aCoder.encodeObject(timestamp, forKey: "timestamp")
-        aCoder.encodeObject(file, forKey: "file")
-        aCoder.encodeObject(function, forKey: "function")
-        aCoder.encodeInteger(lineNumber, forKey: "lineNumber")
+    public func encode(with aCoder: NSCoder) {
+        aCoder.encode(message, forKey: "message")
+        aCoder.encode(logLevel.rawValue, forKey: "logLevel")
+        aCoder.encode(timestamp, forKey: "timestamp")
+        aCoder.encode(file, forKey: "file")
+        aCoder.encode(function, forKey: "function")
+        aCoder.encode(lineNumber, forKey: "lineNumber")
     }
     
     public required init?(coder aDecoder: NSCoder) {
-        self.message = aDecoder.decodeObjectForKey("message") as! String
-        let logLevelInt = aDecoder.decodeIntegerForKey("logLevel")
+        self.message = aDecoder.decodeObject(forKey: "message") as! String
+        let logLevelInt = aDecoder.decodeInteger(forKey: "logLevel")
         self.logLevel = LogLevel(rawValue: logLevelInt)!
-        self.timestamp = aDecoder.decodeObjectForKey("timestamp") as! NSDate
-        self.file = aDecoder.decodeObjectForKey("file") as! String
-        self.function = aDecoder.decodeObjectForKey("function") as! String
-        self.lineNumber = aDecoder.decodeIntegerForKey("lineNumber")
+        self.timestamp = aDecoder.decodeObject(forKey: "timestamp") as! Date
+        self.file = aDecoder.decodeObject(forKey: "file") as! String
+        self.function = aDecoder.decodeObject(forKey: "function") as! String
+        self.lineNumber = aDecoder.decodeInteger(forKey: "lineNumber")
         super.init()
     }
     
