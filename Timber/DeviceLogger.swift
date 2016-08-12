@@ -14,7 +14,7 @@ private let DeviceLoggerUserDefaultsKey = "io.timber.device-logger.user-defaults
 
 public class DeviceLogger: NSObject, LoggerType {
 
-    public static let sharedLogger = DeviceLogger()
+    public static let shared = DeviceLogger()
     public var toRecipients = [String]()
     var messages = [LogMessage]()
     private var window: UIWindow?
