@@ -14,7 +14,7 @@ public protocol MessageFormatterType {
 
 public struct MessageFormatter: MessageFormatterType {
     
-    private let calendarComponents: Set<Calendar.Component> = [.year, .month, .weekday, .hour, .minute, .second, .nanosecond]
+    private let calendarComponents: Set<Calendar.Component> = [.year, .month, .day, .hour, .minute, .second, .nanosecond]
     private let appName = FileManager.applicationName()
     
     public init() {
@@ -23,13 +23,13 @@ public struct MessageFormatter: MessageFormatterType {
     public func formatLogMessage(_ logMessage: LogMessage) -> String {
         let components = Calendar.autoupdatingCurrent.dateComponents(calendarComponents, from: logMessage.timestamp)
         
-        let nanosecondString = "\(components.nanosecond)"
+        let nanosecondString = "\(components.nanosecond ?? 0)"
         let timestampString = NSString(format: "%04ld-%02ld-%02ld %02ld:%02ld:%02ld.%@", components.year!,
-            components.month!,
-            components.day!,
-            components.hour!,
-            components.minute!,
-            components.second!,
+            components.month ?? 0,
+            components.day ?? 0,
+            components.hour ?? 0,
+            components.minute ?? 0,
+            components.second ?? 0,
             nanosecondString.substring(to: nanosecondString.characters.index(nanosecondString.startIndex, offsetBy: 3)))
         let messageToLog = "\(logMessage.logLevel.toString()) \(timestampString) \(appName) [\(logMessage.file) '\(logMessage.function)'] \(logMessage.message)"
         
