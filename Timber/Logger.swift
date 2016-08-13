@@ -21,7 +21,7 @@ public enum LogLevel: Int, Comparable {
     case debug
     case verbose
     
-    func toString() -> String {
+    public func toString() -> String {
         switch self {
         case .none:
             return "None"
