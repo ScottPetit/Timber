@@ -21,6 +21,23 @@ public enum LogLevel: Int, Comparable {
     case debug
     case verbose
     
+    public init(string: String) {
+        switch string.lowercased() {
+        case "none":
+            self = .none
+        case "error":
+            self = .error
+        case "info":
+            self = .info
+        case "debug":
+            self = .debug
+        case "verbose":
+            self = .verbose
+        default:
+            self = .none
+        }
+    }
+    
     public func toString() -> String {
         switch self {
         case .none:
