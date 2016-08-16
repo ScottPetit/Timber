@@ -45,8 +45,8 @@ struct FileManager {
     static let maximumFileExsitenceInterval: TimeInterval = 60 * 60 * 24 * 180 // 180 days
     
     static func currentLogFilePath() -> String? {
-        if let path: AnyObject = UserDefaults.standard.object(forKey: userDefaultsKey) {
-            return path as? String
+        if let path = UserDefaults.standard.object(forKey: userDefaultsKey) as? String {
+            return path
         } else {
             return createNewLogFilePath()
         }
@@ -148,14 +148,14 @@ struct TrashMan {
     static func takeOutFilesInDirectory(_ directoryPath: NSString, withExtension fileExtension: String?, notModifiedSince minimumModifiedDate: Date) {
         let fileURL = URL(fileURLWithPath: directoryPath as String, isDirectory: true)
         let fileManager = Foundation.FileManager.default
-        let contents: [AnyObject]?
+        let contents: [URL]?
         do {
             contents = try fileManager.contentsOfDirectory(at: fileURL, includingPropertiesForKeys: [URLResourceKey.attributeModificationDateKey], options: .skipsHiddenFiles)
         } catch _ {
             contents = nil
         }
         
-        if let files = contents as? [URL] {
+        if let files = contents {
             for file in files {
                 var fileDate: AnyObject?
                 
@@ -170,8 +170,10 @@ struct TrashMan {
                     continue
                 }
                 
-                if fileDate?.timeIntervalSince1970 >= minimumModifiedDate.timeIntervalSince1970 {
-                    continue
+                if let fileDate = fileDate {
+                    if fileDate.timeIntervalSince1970 >= minimumModifiedDate.timeIntervalSince1970 {
+                        continue
+                    }
                 }
                 
                 if fileExtension != nil {
@@ -190,14 +192,14 @@ struct TrashMan {
     
     static func takeOutOldestFilesInDirectory(_ directoryPath: NSString, greaterThanCount count: Int) {
         let directoryURL = URL(fileURLWithPath: directoryPath as String, isDirectory: true)
-        let contents: [AnyObject]?
+        let contents: [URL]?
         do {
             contents = try Foundation.FileManager.default.contentsOfDirectory(at: directoryURL, includingPropertiesForKeys: [URLResourceKey.creationDateKey], options: .skipsHiddenFiles)
         } catch _ {
             contents = nil
         }
         
-        if let files = contents as? [URL] {
+        if let files = contents {
             if count >= files.count {
                 return
             }

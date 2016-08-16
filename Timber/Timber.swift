@@ -80,7 +80,7 @@ public class Timber {
         loggers.append(logger)
     }
     
-    private func log(_ logMessage: LogMessage) {
+    fileprivate func log(_ logMessage: LogMessage) {
         if logMessage.logLevel > Timber.sharedTimber.logLevel {
             return
         }
