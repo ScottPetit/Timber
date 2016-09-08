@@ -104,20 +104,22 @@ public class DeviceLogger: NSObject, LoggerType {
         }
         
         messages.append(message)
-        
-        DispatchQueue.global(qos: .background).async {
-            self.persistLogs()
-        }
     }
     
     //MARK: Notifications
     
     private func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(DeviceLogger.didReceiveMemoryWarningNotification(_:)), name: NSNotification.Name.UIApplicationDidReceiveMemoryWarning, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(DeviceLogger.applicationDidEnterBackgroundNotification(_:)), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
     }
     
     func didReceiveMemoryWarningNotification(_ note: Notification) {
         messages.removeAll()
+    }
+    
+    func applicationDidEnterBackgroundNotification(_ note: Notification) {
+        persistLogs()
     }
 }
 
@@ -153,13 +155,17 @@ class DeviceLoggerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         self.navigationItem.setLeftBarButton(UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(DeviceLoggerViewController.doneButtonPressed)), animated: true)
         
         if MFMailComposeViewController.canSendMail() {
             self.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(DeviceLoggerViewController.shareButtonPressed)), animated: true)
         }
-        
-        setUpTableView()
     }
     
     func doneButtonPressed() {
