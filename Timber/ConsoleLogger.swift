@@ -10,8 +10,10 @@ import Foundation
 
 public struct ConsoleLogger: LoggerType {
     
-    public init() {
-        
+    let logLevel: LogLevel
+    
+    public init(logLevel: LogLevel = .verbose) {
+        self.logLevel = logLevel
     }
     
     //MARK: LoggerType
@@ -19,6 +21,8 @@ public struct ConsoleLogger: LoggerType {
     public var messageFormatter: MessageFormatterType = MessageFormatter()
     
     public func logMessage(_ message: LogMessage) {
+        guard message.logLevel <= logLevel else { return }
+        
         let messageToLog = messageFormatter.formatLogMessage(message)
         
         print(messageToLog)
