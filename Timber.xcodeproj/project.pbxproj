@@ -343,16 +343,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0800;
+                LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Scott Petit";
 				TargetAttributes = {
 					D2B3D1A51BB5B94A0043B6B5 = {
 						CreatedOnToolsVersion = 7.0;
-						LastSwiftMigration = 0800;
+                        LastSwiftMigration = 0800;
 					};
 					D2B3D1AF1BB5B94A0043B6B5 = {
 						CreatedOnToolsVersion = 7.0;
-						LastSwiftMigration = 0800;
+                        LastSwiftMigration = 0800;
 					};
 					D2EAE6971BD27AB7007F4516 = {
 						CreatedOnToolsVersion = 7.1;
@@ -640,7 +640,7 @@
 				PRODUCT_NAME = Timber;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+                SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -661,7 +661,7 @@
 				PRODUCT_NAME = Timber;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+                SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -672,7 +672,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.hecho.TimberTests;
 				PRODUCT_NAME = TimberTests;
-				SWIFT_VERSION = 3.0;
+                SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -684,7 +684,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.hecho.TimberTests;
 				PRODUCT_NAME = TimberTests;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+                SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

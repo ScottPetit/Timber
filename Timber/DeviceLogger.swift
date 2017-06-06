@@ -73,7 +73,7 @@ public class DeviceLogger: NSObject, LoggerType {
         window.addGestureRecognizer(gesture)
     }
     
-    func handleGesture(_ gesture: UIGestureRecognizer) {
+    @objc func handleGesture(_ gesture: UIGestureRecognizer) {
         if let window = window {
             let rootViewController = window.rootViewController
             rootViewController?.present(loggerViewController(), animated: true, completion: nil)
@@ -114,11 +114,11 @@ public class DeviceLogger: NSObject, LoggerType {
         NotificationCenter.default.addObserver(self, selector: #selector(DeviceLogger.applicationDidEnterBackgroundNotification(_:)), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
     }
     
-    func didReceiveMemoryWarningNotification(_ note: Notification) {
+    @objc func didReceiveMemoryWarningNotification(_ note: Notification) {
         messages.removeAll()
     }
     
-    func applicationDidEnterBackgroundNotification(_ note: Notification) {
+    @objc func applicationDidEnterBackgroundNotification(_ note: Notification) {
         persistLogs()
     }
 }
@@ -168,11 +168,11 @@ class DeviceLoggerViewController: UIViewController {
         }
     }
     
-    func doneButtonPressed() {
+    @objc func doneButtonPressed() {
         navigationController?.dismiss(animated: true, completion: nil)
     }
     
-    func shareButtonPressed() {
+    @objc func shareButtonPressed() {
         guard MFMailComposeViewController.canSendMail() else {
             return
         }
