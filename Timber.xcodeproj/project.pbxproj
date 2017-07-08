@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D29D78231F1165E9009A6445 /* Timber.h in Headers */ = {isa = PBXBuildFile; fileRef = D2B3D1A91BB5B94A0043B6B5 /* Timber.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D29D78241F11660B009A6445 /* Timber.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1CC1BB5BA260043B6B5 /* Timber.swift */; };
+		D29D78251F11660E009A6445 /* ConsoleLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1C61BB5BA260043B6B5 /* ConsoleLogger.swift */; };
+		D29D78261F116616009A6445 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1C91BB5BA260043B6B5 /* Logger.swift */; };
+		D29D78271F11661A009A6445 /* LogMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1CA1BB5BA260043B6B5 /* LogMessage.swift */; };
+		D29D78281F11661A009A6445 /* MessageFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1CB1BB5BA260043B6B5 /* MessageFormatter.swift */; };
+		D29D78291F116684009A6445 /* FileLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1C81BB5BA260043B6B5 /* FileLogger.swift */; };
 		D2B3D1AA1BB5B94A0043B6B5 /* Timber.h in Headers */ = {isa = PBXBuildFile; fileRef = D2B3D1A91BB5B94A0043B6B5 /* Timber.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D2B3D1B11BB5B94A0043B6B5 /* Timber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B3D1A61BB5B94A0043B6B5 /* Timber.framework */; };
 		D2B3D1B61BB5B94A0043B6B5 /* TimberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B3D1B51BB5B94A0043B6B5 /* TimberTests.swift */; };
@@ -65,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D29D781B1F1165E0009A6445 /* Timber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B3D1A61BB5B94A0043B6B5 /* Timber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B3D1A91BB5B94A0043B6B5 /* Timber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timber.h; sourceTree = "<group>"; };
 		D2B3D1B01BB5B94A0043B6B5 /* TimberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimberTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +94,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D29D78171F1165E0009A6445 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2B3D1A21BB5B94A0043B6B5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -152,6 +167,7 @@
 				D2EAE6A11BD27AB7007F4516 /* TimberTests.xctest */,
 				D2EAE6BC1BD27D1E007F4516 /* Timber.framework */,
 				D2EAE6C51BD27D1E007F4516 /* TimberTests.xctest */,
+				D29D781B1F1165E0009A6445 /* Timber.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,6 +217,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		D29D78181F1165E0009A6445 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D29D78231F1165E9009A6445 /* Timber.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2B3D1A31BB5B94A0043B6B5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -228,6 +252,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		D29D781A1F1165E0009A6445 /* Timber-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D29D78221F1165E1009A6445 /* Build configuration list for PBXNativeTarget "Timber-watchOS" */;
+			buildPhases = (
+				D29D78161F1165E0009A6445 /* Sources */,
+				D29D78171F1165E0009A6445 /* Frameworks */,
+				D29D78181F1165E0009A6445 /* Headers */,
+				D29D78191F1165E0009A6445 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Timber-watchOS";
+			productName = "Timber-watchOS";
+			productReference = D29D781B1F1165E0009A6445 /* Timber.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		D2B3D1A51BB5B94A0043B6B5 /* Timber-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2B3D1BA1BB5B94A0043B6B5 /* Build configuration list for PBXNativeTarget "Timber-iOS" */;
@@ -346,6 +388,10 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Scott Petit";
 				TargetAttributes = {
+					D29D781A1F1165E0009A6445 = {
+						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = FX8EL9YD72;
+					};
 					D2B3D1A51BB5B94A0043B6B5 = {
 						CreatedOnToolsVersion = 7.0;
 						LastSwiftMigration = 0900;
@@ -390,11 +436,19 @@
 				D2EAE6A01BD27AB7007F4516 /* TimberTests-macOS */,
 				D2EAE6BB1BD27D1E007F4516 /* Timber-tvOS */,
 				D2EAE6C41BD27D1E007F4516 /* TimberTests-tvOS */,
+				D29D781A1F1165E0009A6445 /* Timber-watchOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D29D78191F1165E0009A6445 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2B3D1A41BB5B94A0043B6B5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -440,6 +494,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D29D78161F1165E0009A6445 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D29D78241F11660B009A6445 /* Timber.swift in Sources */,
+				D29D78261F116616009A6445 /* Logger.swift in Sources */,
+				D29D78271F11661A009A6445 /* LogMessage.swift in Sources */,
+				D29D78291F116684009A6445 /* FileLogger.swift in Sources */,
+				D29D78281F11661A009A6445 /* MessageFormatter.swift in Sources */,
+				D29D78251F11660E009A6445 /* ConsoleLogger.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D2B3D1A11BB5B94A0043B6B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -528,6 +595,66 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		D29D78201F1165E1009A6445 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = FX8EL9YD72;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/Timber/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.squishypeachcreative.Timber-watchOS";
+				PRODUCT_NAME = Timber;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		D29D78211F1165E1009A6445 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = FX8EL9YD72;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/Timber/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.squishypeachcreative.Timber-watchOS";
+				PRODUCT_NAME = Timber;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
 		D2B3D1B81BB5B94A0043B6B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -855,6 +982,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D29D78221F1165E1009A6445 /* Build configuration list for PBXNativeTarget "Timber-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D29D78201F1165E1009A6445 /* Debug */,
+				D29D78211F1165E1009A6445 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D2B3D1A01BB5B94A0043B6B5 /* Build configuration list for PBXProject "Timber" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
