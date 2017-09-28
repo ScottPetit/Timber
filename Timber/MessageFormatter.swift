@@ -29,8 +29,7 @@ public struct MessageFormatter: MessageFormatterType {
             components.day ?? 0,
             components.hour ?? 0,
             components.minute ?? 0,
-            components.second ?? 0,
-            nanosecondString.substring(to: nanosecondString.characters.index(nanosecondString.startIndex, offsetBy: 3)))
+            components.second ?? 0,        String(nanosecondString[nanosecondString.startIndex..<nanosecondString.index(nanosecondString.startIndex, offsetBy: 3)]))
         let messageToLog = "\(logMessage.logLevel.toString()) \(timestampString) \(appName) [\(logMessage.file) '\(logMessage.function)'] \(logMessage.message)"
         
         return messageToLog
