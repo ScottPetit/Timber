@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0900"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D2EAE6BB1BD27D1E007F4516"
+               BlueprintIdentifier = "DEAEBCF5BF1BF1B769E80113"
                BuildableName = "Timber.framework"
-               BlueprintName = "Timber-tvOS"
+               BlueprintName = "Timber_macOS"
                ReferencedContainer = "container:Timber.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,15 +26,16 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D2EAE6C41BD27D1E007F4516"
+               BlueprintIdentifier = "502A1B3ED83F7918E0739B28"
                BuildableName = "TimberTests.xctest"
-               BlueprintName = "TimberTests-tvOS"
+               BlueprintName = "TimberTests_macOS"
                ReferencedContainer = "container:Timber.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,14 +43,18 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D2EAE6BB1BD27D1E007F4516"
+            BlueprintIdentifier = "DEAEBCF5BF1BF1B769E80113"
             BuildableName = "Timber.framework"
-            BlueprintName = "Timber-tvOS"
+            BlueprintName = "Timber_macOS"
             ReferencedContainer = "container:Timber.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <CommandLineArguments>
+      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
+      <CodeCoverageTargets>
+      </CodeCoverageTargets>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -64,12 +69,14 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D2EAE6BB1BD27D1E007F4516"
+            BlueprintIdentifier = "DEAEBCF5BF1BF1B769E80113"
             BuildableName = "Timber.framework"
-            BlueprintName = "Timber-tvOS"
+            BlueprintName = "Timber_macOS"
             ReferencedContainer = "container:Timber.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <CommandLineArguments>
+      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -79,15 +86,18 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D2EAE6BB1BD27D1E007F4516"
+            BlueprintIdentifier = "DEAEBCF5BF1BF1B769E80113"
             BuildableName = "Timber.framework"
-            BlueprintName = "Timber-tvOS"
+            BlueprintName = "Timber_macOS"
             ReferencedContainer = "container:Timber.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
+      <CommandLineArguments>
+      </CommandLineArguments>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -83,7 +83,7 @@ struct FileManager {
     
     static func applicationName() -> String {
         let processName = ProcessInfo.processInfo.processName
-        if processName.characters.count > 0 {
+        if processName.count > 0 {
             return processName
         } else {
             return "<UnnamedApp>"
@@ -92,9 +92,10 @@ struct FileManager {
     
     static func defaultLogsDirectory() -> NSString? {
         // Update how we get file URLs per Apple Technical Note https://developer.apple.com/library/ios/technotes/tn2406/_index.html
-        let cachesDirectoryPathURL = Foundation.FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).last as URL!
-        
-        if (cachesDirectoryPathURL?.isFileURL)! {
+        let cachesDirectoryPathURL = Foundation.FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).last
+		let isFileURL = cachesDirectoryPathURL?.isFileURL ?? false
+
+        if isFileURL {
             if let cachesDirectoryPath = cachesDirectoryPathURL?.path as NSString? {
                 let logsDirectory = cachesDirectoryPath.appendingPathComponent("Timber")
                 

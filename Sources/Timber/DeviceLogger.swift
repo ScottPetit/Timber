@@ -109,9 +109,9 @@ public class DeviceLogger: NSObject, LoggerType {
     //MARK: Notifications
     
     private func addObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(DeviceLogger.didReceiveMemoryWarningNotification(_:)), name: NSNotification.Name.UIApplicationDidReceiveMemoryWarning, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(DeviceLogger.didReceiveMemoryWarningNotification(_:)), name: UIApplication.didReceiveMemoryWarningNotification, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(DeviceLogger.applicationDidEnterBackgroundNotification(_:)), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(DeviceLogger.applicationDidEnterBackgroundNotification(_:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
     
     @objc func didReceiveMemoryWarningNotification(_ note: Notification) {
@@ -250,7 +250,7 @@ class DeviceLoggerTableViewCell: UITableViewCell {
     var logLevelLabel: UILabel?
     var messageLabel: UILabel?
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setUpLogLevel()
