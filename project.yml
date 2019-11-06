@@ -22,10 +22,7 @@ configs:
 targets:
   Timber:    
     type: framework
-    platform: 
-      - iOS
-      - macOS
-      - tvOS
+    platform: [iOS, macOS, tvOS]      
     sources:
       - Sources/Timber
     scheme:
@@ -48,10 +45,7 @@ targets:
 
   TimberTests:
     type: bundle.unit-test
-    platform: 
-      - iOS
-      - macOS
-      - tvOS
+    platform: [iOS, macOS, tvOS]      
     sources: Sources/TimberTests
     dependencies:
       - target: Timber_${platform}      

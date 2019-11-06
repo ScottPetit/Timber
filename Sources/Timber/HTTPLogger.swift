@@ -6,6 +6,8 @@
 //  Copyright © 2015 Scott Petit. All rights reserved.
 //
 
+import Foundation
+
 public class HTTPLogger: LoggerType {
 
     let URL: Foundation.URL
