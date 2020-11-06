@@ -17,7 +17,7 @@ public struct LogMessage {
     public let function: String
     public let lineNumber: Int
     
-    init(message: String, logLevel: LogLevel, timestamp: Date, file: String, function: String, lineNumber: Int) {
+    public init(message: String, logLevel: LogLevel, timestamp: Date, file: String, function: String, lineNumber: Int) {
         self.message = message
         self.logLevel = logLevel
         self.timestamp = timestamp
