@@ -37,21 +37,24 @@ public class DeviceLogger: NSObject, LoggerType {
     }
     
     public func messageViewController() -> UIViewController {
+        let mailComposeViewController = MFMailComposeViewController()
+        mailComposeViewController.setSubject("Logs")
+        mailComposeViewController.setToRecipients(toRecipients)
+        mailComposeViewController.mailComposeDelegate = self
+        if let data = attachmentData() {
+            mailComposeViewController.addAttachmentData(data, mimeType: "text/plain", fileName: "Timber.log")
+        }
+        return mailComposeViewController
+    }
+
+    public func attachmentData() -> Data? {
         var log = ""
         for message in messages.reversed() {
             log += messageFormatter.formatLogMessage(message)
             log += "<br>\n"
         }
-        let data = log.data(using: String.Encoding.utf8)
-        
-        let mailComposeViewController = MFMailComposeViewController()
-        mailComposeViewController.setSubject("Logs")
-        mailComposeViewController.setToRecipients(toRecipients)
-        mailComposeViewController.mailComposeDelegate = self
-        if let data = data {
-            mailComposeViewController.addAttachmentData(data, mimeType: "text/plain", fileName: "Timber.log")
-        }
-        return mailComposeViewController
+        let data = log.data(using: .utf8)
+        return data
     }
     
     /**
