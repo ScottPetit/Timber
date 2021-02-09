@@ -35,7 +35,10 @@ public struct FileLogger: LoggerType {
             try? mutableData.write(to: fileUrl, options: Data.WritingOptions())
         }
     }
-    
+
+    public func currentLogFileData() -> Data {
+        return FileManager.currentLogFileData()
+    }
 }
 
 struct FileManager {
